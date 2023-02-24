@@ -1,0 +1,62 @@
+{
+  "name": "jerry-ts-utils",
+  "version": "1.0.7",
+  "description": "一个简单的ts工具库",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest --config ./jest.config.js --coverage",
+    "tsc-file": "tsc --module commonjs --target es2020",
+    "tsc-clean": "tsc --build --clean",
+    "tsc-compile": "tsc && git add ./dist",
+    "webpack": "webpack --config webpack.config.js",
+    "build": "npm run tsc-clean && npm run tsc-compile && webpack --config webpack.config.js",
+    "eslint": "eslint --ext .ts src",
+    "doc": "typedoc --options ./typedoc.json",
+    "patch": "npm version patch && npm publish",
+    "major": "npm version major && npm publish",
+    "minor": "npm version minor && npm publish"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "typescript",
+    "ts-utils"
+  ],
+  "author": "jerry",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.14.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-jest": "^27.2.1",
+    "jest": "^29.4.3",
+    "jest-canvas-mock": "^2.4.0",
+    "jest-environment-jsdom": "^29.4.3",
+    "ts-jest": "^29.0.5",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.0",
+    "typedoc": "^0.22.15",
+    "typescript": "^4.9.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "engines": {
+    "node": ">= 12.10.0"
+  },
+  "engineStrict": true,
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
+}
